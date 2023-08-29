@@ -1,7 +1,10 @@
 #BMI counter © pfrmn
-
+print("BMI Calculator")
 weight = input("Podaj swoją wagę w Kg:")
-height = input("Podaj swoją wysokość w m.cm:")
+heightcmString = input("Podaj swoją wysokość w cm:")
+heightcm = (float(heightcmString))
+
+height = heightcm / 100
 
 weightInt = (float(weight))
 heightInt = (float(height))
