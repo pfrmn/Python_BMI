@@ -1,25 +1,30 @@
-
-
 import tkinter as tk
+import pyperclip
 from tkinter import ttk
 
 # logic
+def Val_input():
+    valinput = entry_int.get()
+    return valinput
 
 def Convert_ftm():
-    ftm_input = entry_int.get()
+    ftm_input = Val_input()
     m_output = (ftm_input, 'feet', round(ftm_input / 3.28, 2), "meteres")
     output_string.set(m_output)
+    pyperclip.copy(output_string)
+    print(pyperclip.paste())
     
 def Convert_nmkm():
-    nm_input = entry_int.get()
+    nm_input = Val_input()
     km_output = (nm_input,'Nm',round(nm_input * 1.852, 2),'Km')
     output_string.set(km_output)
+    
 def Convert_gallb():
-    gal_input = entry_int.get()
-    lb_output = round(gal_input * 6.02, 2) 
-    print_output = (lb_output, 'lb')
+    gal_input = Val_input()
+    lb_output = round(gal_input * 6.02, 2)
+    print_output = (gal_input, 'gal', lb_output, 'lb')
     output_string.set(print_output)
-
+    
 # window
 window = tk.Tk()
 window.title('Converter | pfrmn')
@@ -64,9 +69,6 @@ output_label = ttk.Label(
     font = 'Ubuntu 20',
     textvariable= output_string)
 output_label.pack()
-
-
-
 
 #run
 window.mainloop()
