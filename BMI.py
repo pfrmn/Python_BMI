@@ -1,19 +1,20 @@
 #BMI counter © pfrmn
 print("BMI Calculator")
+language = input("Language: PL/DE:")
 weight = input("Podaj swoją wagę w Kg:")
 heightcmString = input("Podaj swoją wysokość w cm:")
-heightcm = (float(heightcmString))
-
 height = heightcm / 100
 
-weightInt = (float(weight))
+weightInt: float = (float(weight))
 heightInt = (float(height))
-BMI = weightInt / (heightInt * heightInt)
+def BMI = weightInt / (heightInt * heightInt)
 BMIround = (round(BMI, 2))
 BMIoutput = (str(BMIround))
 
-if BMI >= 40:
-    print("Otyłość III stopnia, BMI wynosi: " + BMIoutput)
+if BMI >= 40 and language == "PL":
+    print("Otyłość III stopnia, BMI: " + BMIoutput)
+elif BMI >= 40 and language == "DE":
+    print("Extreme Adipositas, BMI: " + BMIoutput)
 elif 35 <= BMI < 40:
     print("Otyłość II stopnia, BMI wynosi: " + BMIoutput)
 elif 30 <= BMI < 35:
@@ -31,4 +32,4 @@ elif 17 <= BMI < 18.50:
 elif 16 <= BMI < 17:
     print("Wychudzenie, BMI wynosi: " + BMIoutput)                  
 else:
-    print("Wygłodzenie, BMI wynosi" + BMIoutput)
+    print("Wygłodzenie, BMI wynosi " + BMIoutput)
